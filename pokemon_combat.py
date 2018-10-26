@@ -9,14 +9,23 @@ pikachu_life = 100
 enemy_life = 0
 
 if enemy_pokemon == "SQUIRTLE":
-    enemy_life = 90
-    print("Vas a luchar contra Squirtle")
-if enemy_pokemon == "CHARMANDER":
-    enemy_life = 80
-    print("Vas a luchar contra Charmander")
-if enemy_pokemon == "BULBASUR":
-    enemy_life = 100
-    print("Vas a luchar contra Bulbasur")
+     enemy_life = 90
+     print("Vas a luchar contra Squirtle")
+     pokemon_name = "SQUIRTLE"
+     pokemon_atack = 8
+
+elif enemy_pokemon == "CHARMANDER":
+     enemy_life = 80
+     print("Vas a luchar contra Charmander")
+     pokemon_name = "CHARMANDER"
+     pokemon_atack = 7
+
+elif enemy_pokemon == "BULBASUR":
+     enemy_life = 100
+     print("Vas a luchar contra Bulbasur")
+     pokemon_name = "BULBASUR"
+     pokemon_atack = 10
+
 
 pikachu_life = 100
 
@@ -24,27 +33,20 @@ while pikachu_life > 0 and enemy_life > 0:
     ataque_elegido = input("¿Qué ataque quieres utilizar? (Rayo / Bola voltio) ").upper()
     if ataque_elegido == "RAYO":
          enemy_life -= 10
-         print("Pikachu ha usado Rayo. Vida de " + enemy_pokemon + " -10 \n " + "La vida de " + enemy_pokemon + " ahora es " + str(enemy_life))
-
-
+         print("Pikachu ha usado Bola Voltio. Vida de {} -10 PV \n Los PV de {} ahora son {} ".format(str(pokemon_name), str(pokemon_name), int(enemy_life)))
     if ataque_elegido == "BOLA VOLTIO":
          enemy_life -= 12
-         print("Pikachu ha usado Bola Voltio. Vida de " + enemy_pokemon + " -12 \n " + "La vida de " + enemy_pokemon + " ahora es " + str(enemy_life))
+         print ("Pikachu ha usado Bola Voltio. Vida de {} -12 PV \n Los PV de {} ahora son {}".format (str(pokemon_name), str(pokemon_name), int(enemy_life)))
 
-    if enemy_pokemon == "SQUIRTLE":
-         pikachu_life -= 8
-         print("Squirtle ha usado un ataque básico. Vida de Pikachu -8. \n La vida de Pikachu ahora es " + str(pikachu_life))
-    if enemy_pokemon == "CHARMANDER":
-         pikachu_life -= 7
-         print("Charmander ha usado un ataque básico. Vida de Pikachu -8. \n La vida de Pikachu ahora es " + str(pikachu_life))
-    if enemy_pokemon == "BULBASUR":
-         pikachu_life -= 10
-         print("Bulbasur ha usado un ataque básico. Vida de Pikachu -8. \n  La vida de Pikachu ahora es " + str(pikachu_life))
+
+    if enemy_pokemon == str(pokemon_name):
+         pikachu_life -= int(pokemon_atack)
+         print("{} ha usado un ataque básico. Vida de Pikachu -{} PV. \n La vida de Pikachu ahora es {}" .format (str(pokemon_name), int(pokemon_atack), int(pikachu_life)))
 
 
 if enemy_life <= 0:
     print("¡Has ganado el combate!")
-if pikachu_life <= 0:
+elif pikachu_life <= 0:
     print("Has perdido el combate")
 print("")
 print("")
