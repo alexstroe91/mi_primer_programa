@@ -1,0 +1,5 @@
+
+numero_usuario = int(input("¿Qúe tabla de multiplicar quieres? : "))
+
+for multiplo in range(1, 11):
+    print("{} x {} = {} ".format(numero_usuario, multiplo, numero_usuario * multiplo))
