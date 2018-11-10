@@ -1,0 +1,18 @@
+
+frase_usuario = input("Introduce una frase:")
+
+numero_puntos = 0
+numero_comas = 0
+numero_espacios = 0
+
+for caracter in frase_usuario:
+    if caracter == ".":
+        numero_puntos += 1
+    if caracter == ",":
+        numero_comas += 1
+    if caracter == " ":
+        numero_espacios += 1
+
+print("Hay {} puntos en la frase".format(numero_puntos))
+print("Hay {} comas en la frase".format(numero_comas))
+print("Hay {} espacios en la frase".format(numero_espacios))
