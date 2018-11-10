@@ -2,6 +2,9 @@
 
 lista_numeros = []
 numeros_lista = ""
+#le decimos al usuario que para no meter más números en la lista, que diga YA
+
+("Para parar la lista escirbe 'YA' .")
 
 #le pedimos al usuario que nos diga los numeros de la lista.
 
